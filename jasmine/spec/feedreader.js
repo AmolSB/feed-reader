@@ -74,14 +74,11 @@
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done){
-            loadFeed(1, function() {
-                done();
-            });
+            loadFeed(0, done);
          });
 
-         it('should have at least one entry', function(done) {
-            expect($('.feed').is(':empty')).toBe(false);
-            done();
+         it('should have at least one entry', function() {
+            expect($('.feed .entry-link').length).not.toBe(0);
          });
     });
 
