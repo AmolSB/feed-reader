@@ -24,7 +24,7 @@
          * and that the URL is not empty.
          */
          it('should have a url', function() {
-            for(feed of allFeeds) {
+            for(var feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             }
@@ -34,7 +34,7 @@
          * and that the name is not empty.
          */
          it('should have a name', function() {
-            for(feed of allFeeds) {
+            for(var feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             }
@@ -44,7 +44,6 @@
 
     /* A new test suite named "The menu" */
     describe('The menu', function() {
-        var spyEvent;
         /* This test ensures that ensures the menu element is
          * hidden by default.
          */
