@@ -25,8 +25,8 @@
          */
          it('should have a url', function() {
             for(var feed of allFeeds) {
-                expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
+                expect(feed.url.trim()).toBeDefined();
+                expect(feed.url.trim().length).not.toBe(0);
             }
         });
 
@@ -35,8 +35,8 @@
          */
          it('should have a name', function() {
             for(var feed of allFeeds) {
-                expect(feed.name).toBeDefined();
-                expect(feed.name.length).not.toBe(0);
+                expect(feed.name.trim()).toBeDefined();
+                expect(feed.name.trim().length).not.toBe(0);
             }
         });
      });
@@ -56,10 +56,10 @@
           */
           it('should change visibility on click', function() {
 
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidder')).toBe(false);
 
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
       });
@@ -78,7 +78,7 @@
          });
 
          it('should have at least one entry', function() {
-            expect($('.feed .entry-link').length).not.toBe(0);
+            expect($('.feed .entry').length).not.toBe(0);
          });
     });
 
